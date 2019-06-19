@@ -1,0 +1,11 @@
+dungeon: main.o Room.o
+	g++ -std=gnu++11 main.o Room.o -o dungeon
+
+main.o: main.cpp Room.h
+	g++ -c -std=gnu++11 main.cpp
+
+Room.o: Room.cpp Room.h
+	g++ -c -std=gnu++11 Room.cpp
+
+clean:
+	rm main.o Room.o dungeon
